@@ -1,6 +1,6 @@
 import { formatarPreco } from "../dados/formatarPreco.js";
 
-export default function LivroCard() {
+export default function LivroCard( { livro, onAdicionar }) {
   // A Pessoa 1 completa este componente na semana 1.
   return (
         <article className="book-card">
@@ -16,6 +16,12 @@ export default function LivroCard() {
                 <span>{livro.autor}</span>
                 <div>
                     <strong>{formatarPreco(livro.preco)}</strong>
+                     <button 
+                        className="button button--primary" 
+                        onClick={() => onAdicionar(livro)}
+                    >
+                        Adicionar ao carrinho
+                    </button>
                 </div>
             </div>
         </article>

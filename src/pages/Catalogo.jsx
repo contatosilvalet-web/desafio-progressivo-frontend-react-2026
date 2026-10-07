@@ -1,4 +1,6 @@
-export default function Catalogo() {
+import LivroCard from "../components/LivroCard.jsx";
+
+export default function Catalogo( { livros, onAdicionar } ) {
   return (
     <main id="inicio">
       <section className="hero">
@@ -40,7 +42,15 @@ export default function Catalogo() {
             <h2>Escolha sua próxima leitura</h2>
           </div>
         </div>
-        <div className="products__list"></div>
+        <div className="products__list">
+          {livros.map((livro) => (
+            <LivroCard
+              key={livro.id}
+              livro={livro}
+              onAdicionar={onAdicionar}
+            />
+          ))}
+        </div>
       </section>
       <section className="about" id="sobre">
         <div className="container">

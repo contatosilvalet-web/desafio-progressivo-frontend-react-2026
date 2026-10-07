@@ -7,6 +7,10 @@ import { API_KEY, API_URL } from "./dados/api.js";
 export default function App() {
   const [livros, setLivros] = useState([]);
 
+  const [carrinho, setCarrinho] = useState([]);
+
+  const [carrinhoAberto, setCarrinhoAberto] = useState(false);
+
   useEffect(() => {
     async function carregarLivros() {
       const resposta = await fetch(API_URL, {
@@ -19,10 +23,37 @@ export default function App() {
     carregarLivros();
   }, []);
 
+  function adicionarAoCarrinho(livro) {
+    setCarrinho((carrinhoAtual) => {
+      const livroExiste = carrinhoAtual.some(
+        (item) => item.id === livro.id
+      );
+
+      if (livroExiste) {
+        return carrinhoAtual.map((item) =>
+          item.id === livro.id
+            ? { ...item, quantidade: item.quantidade + 1 }
+            : item
+        );
+      }
+
+      return [...carrinhoAtual, { ...livro, quantidade: 1 }];
+    });
+  }
+
   return (
     <>
       <Cabecalho />
-      <Catalogo livros={livros} />
+      <Catalogo 
+      livros={livros} 
+      onAdicionar={adicionarAoCarrinho}
+      />
+      <Carrinho
+        carrinho={carrinho}
+        carrinhoAberto={carrinhoAberto}
+        setCarrinhoAberto={setCarrinhoAberto}
+        setCarrinho={setCarrinho}
+      />
       <Rodape />
     </>
   );
