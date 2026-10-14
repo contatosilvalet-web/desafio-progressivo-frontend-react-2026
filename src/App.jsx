@@ -48,12 +48,12 @@ export default function App() {
       livros={livros} 
       onAdicionar={adicionarAoCarrinho}
       />
-      {/*<Carrinho
+      <Carrinho
         carrinho={carrinho}
         carrinhoAberto={carrinhoAberto}
         setCarrinhoAberto={setCarrinhoAberto}
         setCarrinho={setCarrinho}
-      />*/}
+      />
       <Rodape />
     </>
   );
