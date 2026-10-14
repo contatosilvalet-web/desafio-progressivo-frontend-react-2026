@@ -1,4 +1,4 @@
-import { formatarPreco } from "../dados/formatarPreco.js";
+import formatarPreco from "../dados/formatarPreco.js";
 
 export default function LivroCard( { livro, onAdicionar }) {
   // A Pessoa 1 completa este componente na semana 1.
