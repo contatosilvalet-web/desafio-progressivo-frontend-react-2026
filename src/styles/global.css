@@ -105,6 +105,30 @@ a {
   background: var(--navy);
   color: #fff;
 }
+
+.button, button[type="submit"], button {
+  background-color: var(--coral); /* Usando a cor de destaque do projeto */
+  color: #fff;
+  border: none;
+  border-radius: 8px; /* Bordas arredondadas */
+  padding: 12px 24px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.button:hover, button[type="submit"]:hover, button:hover {
+  background-color: #d95b3c; /* Tom levemente mais escuro para o hover */
+  transform: translateY(-1px); /* Efeito de elevação sutil */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.button:active, button[type="submit"]:active, button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
 .footer {
   background: var(--navy);
   color: #fff;
