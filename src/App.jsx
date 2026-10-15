@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Cabecalho from "./components/Cabecalho.jsx";
 import Rodape from "./components/Rodape.jsx";
 import Catalogo from "./pages/Catalogo.jsx";
+import Carrinho from "./components/Carrinho.jsx";
 import { API_KEY, API_URL } from "./dados/api.js";
 
 export default function App() {
@@ -43,7 +44,7 @@ export default function App() {
 
   return (
     <>
-      <Cabecalho />
+      <Cabecalho onAbrirCarrinho={() => setCarrinhoAberto(true)} />
       <Catalogo 
       livros={livros} 
       onAdicionar={adicionarAoCarrinho}

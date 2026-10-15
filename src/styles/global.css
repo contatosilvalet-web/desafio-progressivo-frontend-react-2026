@@ -105,6 +105,24 @@ a {
   background: var(--navy);
   color: #fff;
 }
+
+.button, button[type="submit"], button {
+  background-color: var(--coral);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 10px; /* Bem mais compacto */
+  font-size: 1.2rem;   /* Fonte menor */
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.button:hover, button[type="submit"]:hover, button:hover {
+  background-color: #d95b3c;
+  transform: translateY(-1px);
+}
+
 .footer {
   background: var(--navy);
   color: #fff;
